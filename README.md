@@ -4,6 +4,7 @@
     <img src="https://img.shields.io/badge/typescript-4.3.4-blue"/>
     <img src="https://img.shields.io/badge/nodemon-2.0.7-green"/>
     <img src="https://img.shields.io/badge/rimraf-3.0.2-red"/>
+    <img src="https://img.shields.io/badge/jest-27.0.6-red"/>
 </p>
 
 My mini playground locally for [Typescript](https://www.typescriptlang.org/).<br>
@@ -37,6 +38,10 @@ Install the dev dependencies
 ```
 npm install -D typescript nodemon rimraf
 ```
+Install also [Jest](https://jestjs.io/)
+```
+npm install -D jest @types/jest ts-jest
+```
 
 Initialize the `tsconfig.json` file
 
@@ -51,7 +56,8 @@ Keep the defaults and add `outDir` to save your generated `.ts` files here
 {
     "compilerOptions": {
         "outDir": "./dist"
-    }
+    },
+    "exclude": ["**/*.spec.ts"]
 }
 ```
 
@@ -62,6 +68,19 @@ Add these scripts in `package.json`
     "scripts": {
         "start": "tsc && node dist/main",
         "start:dev": "nodemon --ext ts --exec \"rimraf dist/**/* && npm start || exit 1\""
+    },
+    "jest": {
+        "clearMocks": true,
+        "collectCoverage": false,
+        "coverageDirectory": "coverage",
+        "coverageProvider": "v8",
+        "testMatch": [
+            "**/*.spec.ts",
+            "*.spec.ts"
+        ],
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        }
     }
 }
 ```
@@ -75,6 +94,7 @@ Add these scripts in `package.json`
 
 ## References
 
+- https://jestjs.io/
 -   https://www.typescriptlang.org/
 -   https://nodemon.io/
 -   https://www.npmjs.com/package/rimraf

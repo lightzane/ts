@@ -1,28 +1,17 @@
-import { Bending } from './enums/bending.enum';
-import { Character } from './enums/character.enum';
-
-export type BendingMap = Record<Character, Bending>;
-
-function getBending(character: Character) {
-    const enumMap: Partial<BendingMap> = {
-        [Character.AANG]: Bending.AIR,
-        [Character.APPA]: Bending.AIR,
-        [Character.KATARA]: Bending.WATER,
-        [Character.ZUKO]: Bending.FIRE,
-        [Character.IROH]: Bending.FIRE,
-    };
-    return enumMap[character] || 'NOTHING';
+export function sum(x: number, y: number) {
+    return x + y;
 }
 
-function log(str: string): void {
-    console.log(str);
+export function subtract(x: number, y: number) {
+    return x - y;
 }
 
-log('============================================================\n');
-
-log('Avatar: The Last Airbender\n');
-log(`Main protagonist is ${Character.AANG} and his main bending is ${getBending(Character.AANG)}.`);
-log(`His beloved ${Character.KATARA} can do ${getBending(Character.KATARA)} bending and healing.`);
-log(`${Character.KATARA}'s brother ${Character.SOKKA} can bend ${getBending(Character.SOKKA)} but is a skilled swordsman and strategist.`);
-
-log('\n============================================================');
+export class Person {
+    wavesHand() {
+        console.log('Waves hand');
+    }
+    saysHi(name: string) {
+        this.wavesHand();
+        return "Hi " + name;
+    }
+}
