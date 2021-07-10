@@ -8,10 +8,11 @@ export function subtract(x: number, y: number) {
 
 export class Person {
     wavesHand() {
-        console.log('Waves hand');
+        throw new Error('holding something');
+        console.log('somemone is waving a hand');
     }
     saysHi(name: string) {
+        console.log('Hi ' + name);
         this.wavesHand();
-        return "Hi " + name;
     }
 }

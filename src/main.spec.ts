@@ -1,7 +1,7 @@
 import { sum, subtract, Person } from "./main";
 
 describe('math operations', () => {
-    test('sum 5 + 5 = 10', () => {
+    test('sum 5 + 6 = 11', () => {
         expect(sum(5, 6)).toEqual(11);
     });
 
@@ -10,14 +10,36 @@ describe('math operations', () => {
     });
 });
 
-describe('a person should live', () => {
-    it('should say hi and bye', () => {
-        let someone = new Person();
-        const spy = jest.spyOn(someone, 'wavesHand');
-        const spyLog = jest.spyOn(console, 'log');
+describe('a person walks by', () => {
 
-        someone.saysHi('John');
-        expect(spy).toHaveBeenCalled();
-        expect(spyLog).toHaveBeenCalledWith('Waves hand');
+    describe('saysHi(name)', () => {
+        it('should wave hand', () => {
+            let someone = new Person();
+            const log = jest.spyOn(console, 'log');
+            const method = jest.spyOn(someone, 'wavesHand').mockImplementation();
+
+            someone.saysHi('John');
+            expect(log).toHaveBeenCalledWith('Hi John');
+            expect(method).toHaveBeenCalled();
+
+        });
+    });
+
+    describe('wavesHand()', () => {
+        it('should throw error when holding something', () => {
+            let someone = new Person();
+            const method = jest.spyOn(someone, 'wavesHand');
+
+            try {
+                someone.wavesHand();
+            } catch (err) { }
+
+            expect(method).toThrow('holding something');
+
+            // this works too!
+            // expect(() => {
+            //     someone.wavesHand();
+            // }).toThrow('holding something');
+        });
     });
 });

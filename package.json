@@ -23,6 +23,7 @@
         "collectCoverage": false,
         "coverageDirectory": "coverage",
         "coverageProvider": "v8",
+        "rootDir": "src",
         "testMatch": [
             "**/*.spec.ts",
             "*.spec.ts"
