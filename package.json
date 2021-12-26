@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "start": "tsc && node dist/main",
-        "start:dev": "nodemon --ext ts --exec \"rimraf dist/**/* && npm start || exit 1\" --ignore \"**/*.spec.ts\"",
+        "start:dev": "nodemon src/main.ts",
         "test": "jest",
         "test:watch": "jest --watch"
     },
@@ -13,10 +13,10 @@
     "devDependencies": {
         "@types/jest": "^26.0.24",
         "jest": "^27.0.6",
-        "nodemon": "^2.0.7",
-        "rimraf": "^3.0.2",
+        "nodemon": "^2.0.15",
         "ts-jest": "^27.0.3",
-        "typescript": "^4.3.4"
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.4"
     },
     "jest": {
         "clearMocks": true,
