@@ -1,16 +1,16 @@
 # TS
 
 <p>
-    <img src="https://img.shields.io/badge/typescript-4.3.4-blue"/>
-    <img src="https://img.shields.io/badge/nodemon-2.0.7-green"/>
-    <img src="https://img.shields.io/badge/rimraf-3.0.2-red"/>
+    <img src="https://img.shields.io/badge/typescript-4.5.4-blue"/>
+    <img src="https://img.shields.io/badge/nodemon-2.0.15-green"/>
+    <img src="https://img.shields.io/badge/ts-node-10.4.0-blue"/>
 </p>
 
 My mini playground locally for [Typescript](https://www.typescriptlang.org/).<br>
 The other (2) node packages supports the development:<br>
 
-**Nodemon** - to watch the file changes and automatically restart node<br>
-**Rimraf** - to clean the dist folder
+**nodemon** - to watch the file changes and automatically restart node<br>
+**ts-node** - requires by nodemon to watch file changes specific to Typescript files
 
 ## Run this Project
 
@@ -35,7 +35,7 @@ npm init -y
 Install the dev dependencies
 
 ```
-npm install -D typescript nodemon rimraf
+npm install -D typescript nodemon ts-node @types/node
 ```
 
 Initialize the `tsconfig.json` file
@@ -61,20 +61,15 @@ Add these scripts in `package.json`
 {
     "scripts": {
         "start": "tsc && node dist/main",
-        "start:dev": "nodemon --ext ts --exec \"rimraf dist/**/* && npm start || exit 1\""
+        "start:dev": "nodemon src/main.ts"
     }
 }
 ```
 
 -   `tsc` - will build the `.ts` files out from `.js` files<br>
 -   `node { path/to/file }` - tells node to execute this `.js` file<br>
--   `nodemon --ext ts` - tells nodemon to watch a specific file with an extension of `ts`<br>
--   `nodemon --exec { command }` - tells nodemon to execute this command<br>
--   `rimraf { path/to/folder }` - clean the folder by deleting all the files inside<br>
--   **|| exit 1** - add this to the end of command so `nodemon` will keep running if there are errors in your code.
 
 ## References
 
 -   https://www.typescriptlang.org/
 -   https://nodemon.io/
--   https://www.npmjs.com/package/rimraf
