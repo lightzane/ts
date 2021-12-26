@@ -3,7 +3,7 @@
 <p>
     <img src="https://img.shields.io/badge/typescript-4.5.4-blue"/>
     <img src="https://img.shields.io/badge/nodemon-2.0.15-green"/>
-    <img src="https://img.shields.io/badge/ts-node-10.4.0-blue"/>
+    <img src="https://img.shields.io/badge/ts--node-10.4.0-blue"/>
 </p>
 
 My mini playground locally for [Typescript](https://www.typescriptlang.org/).<br>
