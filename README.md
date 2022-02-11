@@ -70,7 +70,10 @@ Add these scripts in `package.json`
 {
   "scripts": {
     "start": "tsc && node dist/main",
-    "start:dev": "nodemon src/main.ts"
+    "start:dev": "nodemon src/main.ts",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "clearMocks": true,

@@ -4,6 +4,7 @@
     "scripts": {
         "start": "tsc && node dist/main",
         "start:dev": "nodemon src/main.ts",
+        "build": "tsc",
         "test": "jest",
         "test:watch": "jest --watch"
     },
