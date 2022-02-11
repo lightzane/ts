@@ -36,7 +36,7 @@ npm init -y
 Install the dev dependencies
 
 ```
-npm install -D typescript nodemon rimraf
+npm install -D typescript nodemon
 ```
 
 Install also [Jest](https://jestjs.io/)
@@ -56,10 +56,11 @@ Keep the defaults and add `outDir` to save your generated `.ts` files here
 
 ```json
 {
-    "compilerOptions": {
-        "outDir": "./dist"
-    },
-    "exclude": ["**/*.spec.ts"]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist"
+  },
+  "exclude": ["**/*.spec.ts"]
 }
 ```
 
@@ -67,28 +68,28 @@ Add these scripts in `package.json`
 
 ```json
 {
-    "scripts": {
-        "start": "tsc && node dist/main",
-        "start:dev": "nodemon src/main.ts"
-    },
-    "jest": {
-        "clearMocks": true,
-        "collectCoverage": false,
-        "coverageDirectory": "coverage",
-        "coverageProvider": "v8",
-        "testMatch": ["**/*.spec.ts", "*.spec.ts"],
-        "transform": {
-            "^.+\\.(t|j)s$": "ts-jest"
-        }
+  "scripts": {
+    "start": "tsc && node dist/main",
+    "start:dev": "nodemon src/main.ts"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": false,
+    "coverageDirectory": "coverage",
+    "coverageProvider": "v8",
+    "testMatch": ["**/*.spec.ts", "*.spec.ts"],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
     }
+  }
 }
 ```
 
--   `tsc` - will build the `.ts` files out from `.js` files<br>
--   `node { path/to/file }` - tells node to execute this `.js` file<br>
+- `tsc` - will build the `.ts` files out from `.js` files<br>
+- `node { path/to/file }` - tells node to execute this `.js` file<br>
 
 ## References
 
--   https://jestjs.io/
--   https://www.typescriptlang.org/
--   https://nodemon.io/
+- https://jestjs.io/
+- https://www.typescriptlang.org/
+- https://nodemon.io/
