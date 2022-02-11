@@ -50,6 +50,7 @@ Keep the defaults and add `outDir` to save your generated `.ts` files here
 ```json
 {
     "compilerOptions": {
+        "baseUrl": "./",
         "outDir": "./dist"
     }
 }
