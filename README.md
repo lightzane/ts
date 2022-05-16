@@ -2,7 +2,7 @@
 
 <p>
     <img src="https://img.shields.io/badge/typescript-4.5.4-blue"/>
-    <img src="https://img.shields.io/badge/nodemon-2.0.15-green"/>
+    <img src="https://img.shields.io/badge/nodemon-2.0.16-green"/>
     <img src="https://img.shields.io/badge/ts--node-10.4.0-red"/>
     <img src="https://img.shields.io/badge/jest-27.0.6-red"/>
 </p>
