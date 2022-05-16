@@ -2,7 +2,7 @@
 
 <p>
     <img src="https://img.shields.io/badge/typescript-4.5.4-blue"/>
-    <img src="https://img.shields.io/badge/nodemon-2.0.15-green"/>
+    <img src="https://img.shields.io/badge/nodemon-2.0.16-green"/>
     <img src="https://img.shields.io/badge/ts--node-10.4.0-blue"/>
 </p>
 
@@ -49,10 +49,10 @@ Keep the defaults and add `outDir` to save your generated `.ts` files here
 
 ```json
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "outDir": "./dist"
-    }
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist"
+  }
 }
 ```
 
@@ -60,18 +60,18 @@ Add these scripts in `package.json`
 
 ```json
 {
-    "scripts": {
-        "start": "tsc && node dist/main",
-        "start:dev": "nodemon src/main.ts",
-        "build": "tsc"
-    }
+  "scripts": {
+    "start": "tsc && node dist/main",
+    "start:dev": "nodemon src/main.ts",
+    "build": "tsc"
+  }
 }
 ```
 
--   `tsc` - will build the `.ts` files out from `.js` files<br>
--   `node { path/to/file }` - tells node to execute this `.js` file<br>
+- `tsc` - will build the `.ts` files out from `.js` files<br>
+- `node { path/to/file }` - tells node to execute this `.js` file<br>
 
 ## References
 
--   https://www.typescriptlang.org/
--   https://nodemon.io/
+- https://www.typescriptlang.org/
+- https://nodemon.io/
