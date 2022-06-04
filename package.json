@@ -1,10 +1,16 @@
 {
   "name": "ts",
   "version": "0.0.1",
+  "engines": {
+    "node": ">= 16.14.2",
+    "npm": "~7.12.1"
+  },
   "scripts": {
-    "start": "tsc && node dist/main",
+    "prestart": "npm run build",
+    "start": "node dist/main",
     "start:dev": "nodemon src/main.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "npm start"
   },
   "license": "ISC",
   "devDependencies": {
