@@ -1,12 +1,18 @@
 {
   "name": "ts",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 16.14.2",
+    "npm": "~7.12.1"
+  },
   "scripts": {
-    "start": "tsc && node dist/main",
+    "prestart": "npm run build",
+    "start": "node dist/main",
     "start:dev": "nodemon src/main.ts",
     "build": "tsc",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "postinstall": "npm start"
   },
   "keywords": [],
   "author": "",
@@ -21,8 +27,8 @@
   },
   "jest": {
     "clearMocks": true,
-    "collectCoverage": false,
-    "coverageDirectory": "coverage",
+    "collectCoverage": true,
+    "coverageDirectory": "./../coverage",
     "coverageProvider": "v8",
     "rootDir": "src",
     "testMatch": [
