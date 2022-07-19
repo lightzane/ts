@@ -8,12 +8,17 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "node dist/main",
-    "start:dev": "nodemon src/main.ts",
+    "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint && nodemon\"",
     "build": "tsc",
-    "postinstall": "npm start"
+    "postinstall": "npm start",
+    "lint": "eslint {src,test}/**/*.ts",
+    "lint:fix": "eslint {src,test}/**/*.ts --fix"
   },
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "eslint": "^8.20.0",
     "nodemon": "^2.0.16",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"

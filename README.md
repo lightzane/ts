@@ -62,7 +62,7 @@ Add these scripts in `package.json`
 {
   "scripts": {
     "start": "tsc && node dist/main",
-    "start:dev": "nodemon src/main.ts",
+    "start:dev": "nodemon src/main.ts --watch src",
     "build": "tsc"
   }
 }
@@ -71,7 +71,90 @@ Add these scripts in `package.json`
 - `tsc` - will build the `.ts` files out from `.js` files<br>
 - `node { path/to/file }` - tells node to execute this `.js` file<br>
 
+## Optional (Eslint)
+
+https://eslint.org/docs/latest/user-guide/getting-started
+
+1. `npm init @eslint/config`
+
+```
+Need to install the following packages:
+  @eslint/create-config
+Ok to proceed? (y) y
+```
+
+√ How would you like to use ESLint? **problems**
+
+√ What type of modules does your project use? **esm**
+
+√ Which framework does your project use? **none**
+
+√ Does your project use TypeScript? **yes**
+
+√ Where does your code run? **node**
+
+√ What format do you want your config file to be in? **Javascript**
+
+? Would you like to install them now with npm? **Yes**
+
+```
+? How would you like to use ESLint? ...
+  To check syntax only
+> To check syntax and find problems
+  To check syntax, find problems, and enforce code style
+```
+
+```
+? What type of modules does your project use? ...
+> JavaScript modules (import/export)
+  CommonJS (require/exports)
+  None of these
+```
+
+```
+? Which framework does your project use? ...
+  React
+  Vue.js
+> None of these
+```
+
+```
+? Does your project use TypeScript? » No / Yes
+```
+
+```
+? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+√ Browser
+√ Node
+```
+
+```
+? What format do you want your config file to be in? ...
+> JavaScript
+  YAML
+  JSON
+```
+
+```
+@typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+√ Would you like to install them now with npm? · No / Yes
+Installing @typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest, eslint@latest
+```
+
+**Update** the following `scripts` in **package.json**
+
+```json
+"scripts": {
+  "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint && nodemon\"",
+  "lint": "eslint {src,test}/**/*.ts",
+  "lint:fix": "eslint {src,test}/**/*.ts --fix"
+}
+```
+
+Note: For `Windows` add `\"` to escape the double-quotes
+
 ## References
 
 - https://www.typescriptlang.org/
 - https://nodemon.io/
+- https://eslint.org/docs/latest/user-guide/getting-started
