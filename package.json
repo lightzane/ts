@@ -8,7 +8,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "node dist/main",
-    "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint && nodemon\"",
+    "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint && ts-node\"",
     "build": "tsc",
     "postinstall": "npm start",
     "lint": "eslint {src,test}/**/*.ts",
