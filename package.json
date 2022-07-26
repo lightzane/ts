@@ -3,24 +3,25 @@
   "version": "0.0.1",
   "engines": {
     "node": ">= 16.14.2",
-    "npm": "~7.12.1"
+    "npm": ">= 7.12.1"
   },
   "scripts": {
     "prestart": "npm run build",
     "start": "node dist/main",
-    "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint && ts-node\"",
+    "start:dev": "nodemon src/main.ts --watch src",
+    "start:dev:lint": "nodemon src/main.ts --watch src --exec \"npm run lint:dev && ts-node\"",
     "build": "tsc",
     "postinstall": "npm start",
-    "lint": "eslint {src,test}/**/*.ts",
-    "lint:fix": "eslint {src,test}/**/*.ts --fix"
+    "lint": "eslint {src,test}/**/*.ts --fix",
+    "lint:dev": "eslint {src,test}/**/*.ts"
   },
   "license": "ISC",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
     "eslint": "^8.20.0",
-    "nodemon": "^2.0.16",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   }
 }
