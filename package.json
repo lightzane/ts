@@ -6,10 +6,8 @@
     "npm": ">= 7.12.1"
   },
   "scripts": {
-    "prestart": "npm run build",
-    "start": "node dist/main",
-    "start:dev": "nodemon src/main.ts --watch src",
-    "start:dev:lint": "nodemon src/main.ts --watch src --exec \"npm run lint:dev && ts-node\"",
+    "start": "nodemon src/main.ts --watch src",
+    "start:dev": "nodemon src/main.ts --watch src --exec \"npm run lint:dev && ts-node\"",
     "build": "tsc",
     "postinstall": "npm start",
     "lint": "eslint {src,test}/**/*.ts --fix",
